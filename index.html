@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF7F2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>Aneya ✦ Happy Advance 19th Birthday</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>">
+  
+  <!-- Google Fonts: Luxury Editorial Serif, Modern Geometric Sans & Aesthetic Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italianno&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Grain Layer -->
+  <div class="grain-overlay"></div>
+  <canvas id="ambient-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="ambient-glow orb-1"></div>
+  <div class="ambient-glow orb-2"></div>
+  <div class="ambient-glow orb-3"></div>
+
+  <!-- FLOATING AESTHETIC SPOTIFY-STYLE AUDIO PILL -->
+  <nav class="nav-bar">
+    <div class="audio-pill" id="audio-pill">
+      <div class="music-disc" id="music-disc">
+        <span class="disc-dot"></span>
+      </div>
+      <div class="track-meta">
+        <span class="track-title">Golden Hour • For Vavee 🤍</span>
+        <span class="track-sub" id="music-state-text">Melody: Playing</span>
+      </div>
+      <button class="pill-play-btn" id="music-toggle" aria-label="Toggle Melody">
+        <span id="play-icon">❚❚</span>
+      </button>
+    </div>
+
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="hearts-toggle" title="Toggle Floating Petals">
+        <span>🌸</span>
+      </button>
+      <button class="nav-icon-btn" id="sound-toggle" title="Toggle Sound FX">
+        <span id="sound-icon">🔊</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==============================================
+       STAGE 0: EDITORIAL AESTHETIC ENVELOPE ENTRANCE
+       ============================================== -->
+  <div class="entrance-modal" id="entrance-modal">
+    <div class="entrance-backdrop"></div>
+    <div class="entrance-container">
+      <span class="editorial-tag">✦ STRICTLY CONFIDENTIAL & SPECIAL ✦</span>
+      <h2 class="entrance-recipient">Reserved for my dearest</h2>
+      <h1 class="entrance-title">Aneya</h1>
+      <span class="entrance-petname">aka my sweet Vavee 🤍</span>
+      <p class="entrance-date">Born 12 · 11 · 2007 • Entering Chapter 19</p>
+
+      <!-- Minimal Aesthetic Envelope -->
+      <div class="minimal-envelope" id="envelope-trigger">
+        <div class="envelope-card-peek">
+          <span class="peek-text">An early birthday love letter for my Vavee...</span>
+        </div>
+        <div class="envelope-crease"></div>
+        <div class="wax-seal-button" id="wax-seal">
+          <div class="seal-ring">
+            <span class="seal-initials">A & J</span>
+            <span class="seal-sub">Vavee</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="open-letter-btn" id="open-experience-btn">
+        <span>Open Vavee's Birthday Letter</span>
+        <span class="btn-arrow">→</span>
+      </button>
+      <span class="entrance-hint">A quiet, loving space created just for your smile</span>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       MAIN AESTHETIC EXPERIENCE
+       ============================================== -->
+  <main class="page-container" id="main-content">
+
+    <!-- HERO SECTION -->
+    <header class="hero-editorial">
+      <div class="hero-chip">
+        <span class="chip-dot"></span>
+        <span>Advance Birthday Edition • For My Vavee (12/11/2007)</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        Happy Advance Birthday,
+        <span class="italic-serif-name">Aneya</span>
+        <span class="hero-sub-callout">(my Vavee 🤍)</span>
+      </h1>
+
+      <p class="hero-editorial-sub">
+        The calendar says November 12th, but my heart refuses to wait two more days to begin celebrating the most precious, breathtaking 19-year-old girl in my world.
+      </p>
+
+      <!-- AESTHETIC MINIMAL COUNTDOWN -->
+      <div class="minimal-countdown-wrapper">
+        <div class="countdown-badge-title">Counting Down to Vavee's 19th Year ✦ November 12, 2026</div>
+
+        <div class="countdown-capsules">
+          <div class="capsule">
+            <span class="cap-val" id="days">00</span>
+            <span class="cap-unit">Days</span>
+          </div>
+          <span class="cap-sep">·</span>
+          <div class="capsule">
+            <span class="cap-val" id="hours">00</span>
+            <span class="cap-unit">Hours</span>
+          </div>
+          <span class="cap-sep">·</span>
+          <div class="capsule">
+            <span class="cap-val" id="minutes">00</span>
+            <span class="cap-unit">Minutes</span>
+          </div>
+          <span class="cap-sep">·</span>
+          <div class="capsule">
+            <span class="cap-val" id="seconds">00</span>
+            <span class="cap-unit">Seconds</span>
+          </div>
+        </div>
+
+        <p class="countdown-subtext" id="countdown-status-text">
+          "Every ticking second brings me closer to celebrating the day you blessed this earth."
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn-aesthetic btn-solid" id="btn-celebrate-early">
+            <span>✧ Celebrate in Advance</span>
+          </button>
+          <a href="#cake-anchor" class="btn-aesthetic btn-glass">
+            <span>🕯️ The Candle Ceremony</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION: MINIMAL CANDLE CEREMONY -->
+    <section class="section-block" id="cake-anchor">
+      <div class="section-header">
+        <span class="aesthetic-label">CHAPTER 19 CEREMONY</span>
+        <h2 class="aesthetic-heading">Whisper a Wish</h2>
+        <p class="aesthetic-subheading">
+          Close your eyes, hold your dearest hope in mind, and tap to blow out your 19th birthday candle.
+        </p>
+      </div>
+
+      <div class="candle-pod-card">
+        <div class="candle-stage">
+          <div class="candle-stand">
+            <!-- Candle 1 -->
+            <div class="minimal-taper-candle" id="candle-unit-1">
+              <div class="candle-flame" id="flame-1"></div>
+              <div class="candle-wick"></div>
+              <div class="candle-wax-body">
+                <span class="candle-number">1</span>
+              </div>
+            </div>
+            <!-- Candle 9 -->
+            <div class="minimal-taper-candle" id="candle-unit-2">
+              <div class="candle-flame" id="flame-2"></div>
+              <div class="candle-wick"></div>
+              <div class="candle-wax-body">
+                <span class="candle-number">9</span>
+              </div>
+            </div>
+          </div>
+          <div class="candle-pedestal"></div>
+        </div>
+
+        <div class="candle-actions">
+          <button class="blow-candle-btn" id="blow-candles-btn">
+            <span class="blow-icon">🌬️</span>
+            <span>Blow Out 19th Birthday Candles</span>
+          </button>
+          <button class="relight-candle-btn" id="relight-candles-btn" style="display:none;">
+            <span>✧ Relight Candles</span>
+          </button>
+        </div>
+
+        <!-- Wish Reveal Sheet -->
+        <div class="wish-reveal-sheet" id="wish-reveal-card">
+          <span class="wish-stars">✦ ✧ ✦</span>
+          <h3>Your Wish Has Reached The Stars</h3>
+          <p>
+            Vavee, may this 19th chapter bring you gentle mornings, hearty laughter, 
+            peace that settles deep in your heart, and boundless love. You deserve the softest, most beautiful life.
+          </p>
+          <span class="wish-author">— With all my love, always, Vavee 🤍</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PINTEREST MOODBOARD / MEMORY ARCHIVE -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="aesthetic-label">VISUAL ARCHIVE</span>
+        <h2 class="aesthetic-heading">Captured in Time</h2>
+        <p class="aesthetic-subheading">
+          Moments where the light fell just right, and I fell in love with you all over again.
+        </p>
+      </div>
+
+      <div class="moodboard-grid">
+        <!-- Photo 1: Flower Solo -->
+        <article class="moodboard-item item-1" data-photo="assets/photo1_flower.jpg" data-title="Sunlit Bloom 🌸" data-note="A purple flower in your hair, sunbeams kissing your skin, and that radiant pout. You are natural poetry in human form.">
+          <div class="washi-tape tape-top"></div>
+          <div class="photo-frame">
+            <img src="assets/photo1_flower.jpg" alt="Aneya with flower" loading="lazy">
+            <div class="film-grain-layer"></div>
+          </div>
+          <div class="frame-details">
+            <div class="frame-text">
+              <span class="film-timestamp">NO. 01 // 12.11</span>
+              <h3 class="frame-title">The Flower Girl</h3>
+            </div>
+            <button class="heart-pill-btn" aria-label="Love this photo">
+              <span>🤍</span>
+              <span class="like-number">19.9k</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Photo 2: Cheeky Auto Ride -->
+        <article class="moodboard-item item-2" data-photo="assets/photo2_cheeky.jpg" data-title="My Drama Queen 🚕" data-note="The funny scrunch on your face, holding my cheek while the auto bounces along. My favorite partner in crime and sweetest troublemaker.">
+          <div class="washi-tape tape-left"></div>
+          <div class="photo-frame">
+            <img src="assets/photo2_cheeky.jpg" alt="Aneya cheeky auto ride" loading="lazy">
+            <div class="film-grain-layer"></div>
+          </div>
+          <div class="frame-details">
+            <div class="frame-text">
+              <span class="film-timestamp">NO. 02 // LAUGHTER</span>
+              <h3 class="frame-title">Cheeky Auto Adventures</h3>
+            </div>
+            <button class="heart-pill-btn" aria-label="Love this photo">
+              <span>🤍</span>
+              <span class="like-number">Forever</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Photo 3: Smiling Couple -->
+        <article class="moodboard-item item-3" data-photo="assets/photo3_smile.jpg" data-title="By Your Side 💕" data-note="That warm dimple and glowing smile. Standing next to you is where all noise quiets down and my soul feels completely at peace.">
+          <div class="washi-tape tape-right"></div>
+          <div class="photo-frame">
+            <img src="assets/photo3_smile.jpg" alt="Aneya and boyfriend smiling" loading="lazy">
+            <div class="film-grain-layer"></div>
+          </div>
+          <div class="frame-details">
+            <div class="frame-text">
+              <span class="film-timestamp">NO. 03 // US</span>
+              <h3 class="frame-title">Two Smiles Together</h3>
+            </div>
+            <button class="heart-pill-btn" aria-label="Love this photo">
+              <span>🤍</span>
+              <span class="like-number">Infinite</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Photo 4: Mall Mirror Hug -->
+        <article class="moodboard-item item-4" data-photo="assets/photo4_mall.jpg" data-title="Safe in My Arms 🛍️" data-note="Resting your head on my shoulder, holding my arm as we wander. In any room full of people, you are the only one I see.">
+          <div class="washi-tape tape-bottom"></div>
+          <div class="photo-frame">
+            <img src="assets/photo4_mall.jpg" alt="Aneya and boyfriend mall selfie" loading="lazy">
+            <div class="film-grain-layer"></div>
+          </div>
+          <div class="frame-details">
+            <div class="frame-text">
+              <span class="film-timestamp">NO. 04 // HARBOR</span>
+              <h3 class="frame-title">Right Here With You</h3>
+            </div>
+            <button class="heart-pill-btn" aria-label="Love this photo">
+              <span>🤍</span>
+              <span class="like-number">100M</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION: CINEMATIC FILM REELS (3 VIDEOS) -->
+    <section class="section-block">
+      <div class="section-header">
+        <span class="aesthetic-label">MOTION DIARIES</span>
+        <h2 class="aesthetic-heading">Fragments in Motion</h2>
+        <p class="aesthetic-subheading">
+          Short video clips preserving your sweetest laugh, glances, and presence.
+        </p>
+      </div>
+
+      <div class="reels-trio-grid">
+        <!-- Reel 1 -->
+        <div class="cinema-reel-card">
+          <div class="cinema-top">
+            <span class="rec-dot"></span>
+            <span class="reel-num">REEL 01 // VAVEE</span>
+            <button class="cinema-audio-btn" data-target="vid1" title="Toggle Audio">🔊</button>
+          </div>
+          <div class="cinema-viewport">
+            <video id="vid1" playsinline webkit-playsinline loop preload="metadata" src="assets/video1.mp4"></video>
+            <div class="cinema-overlay" id="overlay-vid1">
+              <button class="aesthetic-play-btn" aria-label="Play Reel 1">
+                <span class="play-triangle">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="cinema-caption">
+            <h4>Gentle Radiance ✦</h4>
+            <p>Every frame of my Vavee is my favorite view.</p>
+          </div>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="cinema-reel-card">
+          <div class="cinema-top">
+            <span class="rec-dot"></span>
+            <span class="reel-num">REEL 02 // GIGGLES</span>
+            <button class="cinema-audio-btn" data-target="vid2" title="Toggle Audio">🔊</button>
+          </div>
+          <div class="cinema-viewport">
+            <video id="vid2" playsinline webkit-playsinline loop preload="metadata" src="assets/video2.mp4"></video>
+            <div class="cinema-overlay" id="overlay-vid2">
+              <button class="aesthetic-play-btn" aria-label="Play Reel 2">
+                <span class="play-triangle">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="cinema-caption">
+            <h4>Sweet Whispers ✦</h4>
+            <p>The candid moments where you are purely yourself.</p>
+          </div>
+        </div>
+
+        <!-- Reel 3 (New Video Uploaded) -->
+        <div class="cinema-reel-card">
+          <div class="cinema-top">
+            <span class="rec-dot"></span>
+            <span class="reel-num">REEL 03 // MAGIC</span>
+            <button class="cinema-audio-btn" data-target="vid3" title="Toggle Audio">🔊</button>
+          </div>
+          <div class="cinema-viewport">
+            <video id="vid3" playsinline webkit-playsinline loop preload="metadata" src="assets/video3.mp4"></video>
+            <div class="cinema-overlay" id="overlay-vid3">
+              <button class="aesthetic-play-btn" aria-label="Play Reel 3">
+                <span class="play-triangle">▶</span>
+              </button>
+            </div>
+          </div>
+          <div class="cinema-caption">
+            <h4>Unfiltered Grace ✦</h4>
+            <p>Living memories that I replay whenever I miss you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: EDITORIAL LOVE LETTER -->
+    <section class="section-block letter-container">
+      <div class="letter-sheet">
+        <div class="letter-header-row">
+          <span class="letter-seal-label">FROM MY HEART TO YOURS ✦ FOR VAVEE</span>
+          <span class="letter-date-stamp">10 · 11 · 2026 // ADVANCE WISH</span>
+        </div>
+
+        <div class="letter-layout">
+          <!-- The Exact Letter & Poem from the Image -->
+          <div class="letter-text-flow">
+            <p class="letter-salutation">My Dearest Vavee,</p>
+
+            <p class="poem-stanza">
+              Every moment with you feels like it was always meant to be..<br>
+              From the quiet mornings to the late-night laughs,<br>
+              from the small gestures to the biggest dreams we share,<br>
+              you've filled my life in ways I never imagined..
+            </p>
+
+            <p class="poem-stanza">
+              Life with you has taught me that love doesn't need to be loud to be real..<br>
+              It's in the way our hands find each other,<br>
+              in the warmth of your voice when the world feels heavy,<br>
+              and in the simple comfort of knowing we belong<br>
+              to the same story, the same heartbeat..
+            </p>
+
+            <p class="poem-stanza">
+              I love the way you see me not just the parts I show the world,<br>
+              but the parts I hide, the soft, messy, silly parts..<br>
+              You accept them all,<br>
+              and in that acceptance,<br>
+              I find a home I never want to leave..
+            </p>
+
+            <p class="poem-stanza">
+              You are my calm and my adventure,<br>
+              my laughter and my quiet reflection,<br>
+              my certainty and my wonder..<br>
+              Every day with you is a reminder<br>
+              that forever doesn't have to be far away<br>
+              it's here, now, with you..
+            </p>
+
+            <p class="poem-stanza">
+              I promise to support you,<br>
+              and to love you in every way I can..<br>
+              Through the ordinary days and the extraordinary ones,<br>
+              through the challenges and the triumphs,<br>
+              my heart is yours calm, unshakable and endlessly grateful..
+            </p>
+
+            <p class="poem-stanza">
+              I admire you more than I know how to explain..<br>
+              Not just for who you are,<br>
+              but for how you make me feel<br>
+              <span class="feeling-words">seen,</span><br>
+              <span class="feeling-words">heard,</span><br>
+              <span class="feeling-words">valued,</span><br>
+              <span class="feeling-words highlight-love">loved..</span>
+            </p>
+
+            <div class="poem-source">~samthought</div>
+
+            <p class="letter-close">
+              Happy Advance 19th Birthday, my sweet Vavee.<br>
+              <span class="letter-signature">Forever & always yours, with all my love 🤍</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="letter-bottom-stamp">
+          <div class="wax-monogram">Vavee</div>
+          <span class="wax-verified">SEALED WITH DEVOTION</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: VIRTUAL HUG EMBRACE -->
+    <section class="section-block hug-wrapper">
+      <div class="hug-card-minimal">
+        <span class="hug-icon-pill">🫂</span>
+        <h3>Need a Warm Embrace, Vavee?</h3>
+        <p>Press and hold the button below to feel a gentle virtual hug with calming screen warmth and heartbeat resonance.</p>
+
+        <button class="hug-trigger-btn" id="hug-btn">
+          <span class="hug-dot"></span>
+          <span class="hug-btn-label">Press & Hold To Hug Vavee</span>
+        </button>
+        <span class="hug-status-label" id="hug-status">Waiting for your touch...</span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="aesthetic-footer">
+      <div class="footer-divider">✦ ✧ ✦</div>
+      <p class="footer-credit">Handcrafted with boundless love for <b>Aneya</b> (my Vavee 🤍)</p>
+      <p class="footer-meta">Born 12/11/2007 • Chapter 19 • Always By Your Side 🤍</p>
+      <button class="back-to-top-btn" id="scroll-top-btn">↑ Back to Top</button>
+    </footer>
+
+  </main>
+
+  <!-- ==============================================
+       MODALS: LIGHTBOX & GIFT POPUP
+       ============================================== -->
+  <!-- Photo Lightbox -->
+  <div class="lightbox-curtain" id="photo-lightbox">
+    <div class="lightbox-bg"></div>
+    <div class="lightbox-modal">
+      <button class="lightbox-dismiss" id="lightbox-close">&times;</button>
+      <div class="lightbox-view">
+        <img src="" alt="Enlarged Archive" id="lightbox-img">
+      </div>
+      <div class="lightbox-editorial">
+        <h3 id="lightbox-title">Title</h3>
+        <p id="lightbox-desc">Description</p>
+        <button class="btn-aesthetic btn-solid" id="lightbox-heart-btn">
+          <span>🤍 Send Infinite Love</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gift Popup Modal -->
+  <div class="gift-popup-curtain" id="gift-modal">
+    <div class="gift-popup-bg"></div>
+    <div class="gift-popup-box">
+      <button class="gift-dismiss" id="close-gift-btn">&times;</button>
+      <div class="gift-emoji-badge" id="gift-emoji">🎁</div>
+      <h3 id="gift-title">Gift Title</h3>
+      <p id="gift-text">Gift details...</p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>

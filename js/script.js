@@ -50,12 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let melodyTimer = null;
 
   function initAudio() {
-    if (!audioCtx) {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      audioCtx = new AudioContext();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
+    try {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
+    } catch (e) {
+      console.warn("Audio Context init suppressed:", e);
     }
   }
 
@@ -408,8 +414,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById(overlayId);
     if (!video || !overlay) return;
 
-    overlay.addEventListener('click', () => {
+    function handleTogglePlay(e) {
+      if (e) e.stopPropagation();
       initAudio();
+
       if (video.paused) {
         // Pause all other video elements
         document.querySelectorAll('video').forEach(v => {
@@ -423,19 +431,32 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        video.play();
-        overlay.classList.add('playing');
+        // Safe mobile video play with fallback to muted play if needed
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              overlay.classList.add('playing');
+            })
+            .catch(() => {
+              // If unmuted autoplay blocked on mobile, mute and play safely
+              video.muted = true;
+              const retryPromise = video.play();
+              if (retryPromise !== undefined) {
+                retryPromise
+                  .then(() => overlay.classList.add('playing'))
+                  .catch(() => {});
+              }
+            });
+        }
       } else {
         video.pause();
         overlay.classList.remove('playing');
       }
-    });
+    }
 
-    video.addEventListener('click', () => {
-      video.pause();
-      overlay.classList.remove('playing');
-    });
-
+    overlay.addEventListener('click', handleTogglePlay);
+    video.addEventListener('click', handleTogglePlay);
     video.addEventListener('ended', () => {
       overlay.classList.remove('playing');
     });
@@ -558,12 +579,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.filter = "brightness(1.03) contrast(0.98)";
 
     playHeartbeat();
-    if (navigator.vibrate) navigator.vibrate([80, 50, 80]);
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+      try { navigator.vibrate([80, 50, 80]); } catch (e) {}
+    }
 
     hugTimer = setInterval(() => {
       hugScore += 20;
       playHeartbeat();
-      if (navigator.vibrate) navigator.vibrate(50);
+      if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+        try { navigator.vibrate(50); } catch (e) {}
+      }
 
       if (hugScore >= 100) {
         clearInterval(hugTimer);

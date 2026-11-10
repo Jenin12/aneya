@@ -4,6 +4,16 @@ An editorial, aesthetic, minimal-cute web celebration designed exclusively for *
 
 ---
 
+## 🌐 Official Live Production URL
+
+The site is published globally and live at:
+👉 **[https://jenin12.github.io/aneya/](https://jenin12.github.io/aneya/)**
+
+GitHub Repository:
+👉 **[https://github.com/Jenin12/aneya](https://github.com/Jenin12/aneya)**
+
+---
+
 ## 🌸 Key Highlights
 
 1. 💌 **Editorial Wax-Sealed Entrance:**
@@ -33,7 +43,7 @@ An editorial, aesthetic, minimal-cute web celebration designed exclusively for *
    - **Affection Whispers:** Cycling handwritten love notes.
    - **Keepsake Boxes:** 3 interactive gift capsules.
 
-8. 💌 **The Editorial Love Letter & Poem (New):**
+8. 💌 **The Editorial Love Letter & Poem:**
    - Features the exact poem & prose transcribed from your image:
      - *"Every moment with you feels like it was always meant to be.."*
      - *"Life with you has taught me that love doesn't need to be loud to be real.."*
@@ -42,19 +52,7 @@ An editorial, aesthetic, minimal-cute web celebration designed exclusively for *
      - *"I promise to support you, and to love you in every way I can.."*
      - *"I admire you more than I know how to explain.. seen, heard, valued, loved.."*
      - `~samthought`
-   - Showcases your night couple photo together under the illuminated archway (`assets/photo5_night.jpg`).
    - Wax monogram seal: `Vavee • Sealed with devotion`.
 
 9. 🫂 **Warm Hug Embrace:**
    - Press-and-hold interaction with subtle screen warmth, heartbeat resonance, and haptic feedback.
-
----
-
-## 🚀 How to View & Share
-
-- **Instant Local Preview:**
-  Open: **[http://localhost:3000](http://localhost:3000)**
-  *(Or double-click [index.html](file:///c:/Users/jenin/Desktop/hbd/index.html))*
-
-- **Send to Vavee's Phone:**
-  Drag and drop the `hbd` folder onto **[Netlify Drop](https://app.netlify.com/drop)** or **[Vercel](https://vercel.com)** to get a free live shareable link!
